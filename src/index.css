@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.ListPageDataWrapper {
+  padding: 20px;
+}
+  
+  .ListPageDataWrapper p {
+    position: relative;
+  }
+
+.ListPageBox {
+  background: grey;
+  max-width: 550px;
+  padding-bottom: 15px;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ListPageBox__title {
+    position: relative;
+  }
+
+.DetailsPage {
+  position: relative;
+}
+
+.NewRecordForm {
+  position: relative;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: red;
 }

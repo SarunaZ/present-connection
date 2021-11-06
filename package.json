@@ -1,31 +1,34 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "present-connection",
+  "version": "1.0.1",
+  "description": "A mini-project showcase for present connection front-end academy",
+  "baseUrl": "src",
+  "license": "Free",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@types/node": "12.20.36",
+    "@types/react": "17.0.34",
+    "@types/react-dom": "17.0.11",
+    "@types/react-router-dom": "5.3.0",
+    "dotenv": "10.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-helmet-async": "1.1.2",
+    "react-router-dom": "5.3.0",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "typescript": "4.1.6",
+    "normalize.css": "8.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:css": "postcss src/App/style.css -o src/index.css",
+    "watch:css": "postcss src/App/style.css -o src/index.css -w",
+    "start": "npm-run-all -p watch:css start-react",
+    "build": "npm-run-all build:css build-react",
+    "start-react": "react-scripts start",
+    "build-react": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -39,5 +42,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">12 <=16.13.0",
+    "npm": "<8.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.0",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.3.11",
+    "postcss-cli": "9.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "5.0.6"
   }
 }

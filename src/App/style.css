@@ -1,0 +1,10 @@
+@import '../Views/ListPage/style.css';
+@import '../Views/DetailsPage/style.css';
+@import '../Views/NewRecordPage/style.css';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background: red;
+}
