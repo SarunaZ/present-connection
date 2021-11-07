@@ -34,8 +34,12 @@ const routeMap: RouteParams[] = [
 const App = () => (
   <HelmetProvider>
     <Router>
-      {/* TODO Do a better loading component */}
-      <Suspense fallback={<div className='LoaderWrapper'><Loader /></div>}>
+      <Suspense
+        fallback={
+          <div className='LoaderWrapper'>
+            <Loader />
+          </div>
+        }>
         <Header />
         <Switch>
           {routeMap.map(routeProp => <Route key={routeProp.id} {...routeProp}/> )}
