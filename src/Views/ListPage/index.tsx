@@ -3,13 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { getData } from '../../App/utils';
 import Box from '../../Components/Box';
 import Loader from '../../Components/Loader';
-
-interface RestData {
-  userId: number,
-  id: number,
-  title: string,
-  body: string
-}
+import { RestData } from "./types";
 
 const ListPage = () => {
   const [ listData, setListData ] = useState<RestData[] | undefined>(undefined);
