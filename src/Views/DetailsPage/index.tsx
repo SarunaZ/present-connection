@@ -1,39 +1,37 @@
 import React, {useEffect, useState} from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
+import { getData } from '../../App/utils';
+import Box from "../../Components/Box";
+import { RestData } from "../ListPage/types";
 
-interface List {
-  userId: number,
-  id: number,
-  title: string,
-  body: string
+interface RouteParams {
+  id: string;
 }
 
 const DetailsPage = () => {
-  const [ listData, setListData ] = useState<List[] | null>(null);
-
-  const getData = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    return await response.json();
-  }
+  const [ data, setData ] = useState<RestData | null>(null);
+  const params = useParams<RouteParams>();
 
   useEffect(() => {
-    getData().then((listDataRes: List[]) => {
-      setListData([ ...listDataRes])
+    getData(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+    .then((listDataRes: RestData) => {
+      setData(listDataRes)
     });
+  // eslint-disable-next-line 
   }, []);
 
-  console.log(listData)
   return (
-    <ul>
-      {listData?.map(item => {
-        return (
-          <>
-            <li key={item.id}>{item.title}</li>
-            <li key={item.id}>{item.body}</li>
-          </>
-        )
-      })}
-    </ul>
-  );
+    <>
+    <Helmet title={`${data?.title} | Present Connection`} />
+    <div className="DetailsPageWrapper">
+      <section>
+        <h2>Details</h2>
+        <Box itemData={data} isBack isLoading={!data}/>
+      </section>
+    </div>
+    </>
+);
 }
 
 export default DetailsPage;

@@ -1,0 +1,24 @@
+.Box {
+  background: #F05A22;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 100%;
+  
+  &__title,
+  &__body {
+    color: #FFFFFF;
+    text-transform: capitalize
+  }
+  
+  &__read-more,
+  &__back {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

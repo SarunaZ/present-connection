@@ -1,3 +1,8 @@
+.DetailsPageWrapper {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 .DetailsPage {
   position: relative;
 }

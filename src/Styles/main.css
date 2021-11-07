@@ -1,0 +1,10 @@
+/* Component styles */
+@import '../Components/Loader/style.css';
+@import '../Components/Box/style.css';
+@import '../Components/Header/style.css';
+
+/* View styles */
+@import '../App/style.css';
+@import '../Views/ListPage/style.css';
+@import '../Views/DetailsPage/style.css';
+@import '../Views/NewRecordPage/style.css';
