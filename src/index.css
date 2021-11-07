@@ -48,7 +48,7 @@
           box-sizing: border-box;
   margin-bottom: 15px;
   padding: 15px;
-  width: 100%;
+  width: auto;
 }
 .Box__title,
   .Box__body {
@@ -87,11 +87,25 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.Header__logo {
+    max-width: 150px;
+    width: 100%;
+  }
+@media (min-width: 600px) {
+.Header__logo {
+      max-width: none
+  }
+    }
 .Navigation__item {
     color: #FFFFFF;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     text-decoration: none;
   }
+@media (min-width: 600px) {
+.Navigation__item {
+      font-size: 2.4rem
+  }
+    }
 /* View styles */
 html {
   font-size: 10px;
@@ -107,7 +121,13 @@ body {
 }
 h2 {
   font-size: 3.2rem;
+  padding: 0 15px;
 }
+@media (min-width: 600px) {
+h2 {
+    padding: 0
+}
+  }
 h3 {
   font-size: 2rem;
   margin-top: 0
@@ -137,6 +157,14 @@ a {
   margin: 0 auto;
   max-width: 600px;
 }
+.NewRecordPage .Box + .NewRecordForm__button {
+    margin: 0 auto;
+  }
+@media (min-width: 600px) {
+    .NewRecordPage .Box + .NewRecordForm__button {
+      margin: 0;
+    }
+  }
 .NewRecordForm {
   display: -webkit-box;
   display: -webkit-flex;
@@ -150,6 +178,7 @@ a {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 15px;
 }
 .NewRecordForm > div {
     margin-bottom: 15px;
@@ -210,3 +239,8 @@ a {
 .NewRecordForm__button:hover {
       background: #FF6F1B;
     }
+@media (min-width: 600px) {
+.NewRecordForm {
+    padding: 0
+}
+  }

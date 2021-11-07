@@ -1,11 +1,22 @@
 .NewRecordPage {
   margin: 0 auto;
   max-width: 600px;
+  
+  .Box + .NewRecordForm__button {
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 600px) {
+    .Box + .NewRecordForm__button {
+      margin: 0;
+    }
+  }
 }
 
 .NewRecordForm {
   display: flex;
   flex-direction: column;
+  padding: 15px;
   
   > div {
     margin-bottom: 15px;
@@ -51,5 +62,9 @@
     &:hover {
       background: #FF6F1B;
     }
+  }
+  
+  @media (min-width: 600px) {
+    padding: 0;
   }
 }

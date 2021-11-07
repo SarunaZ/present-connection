@@ -10,7 +10,7 @@ const Header = () => {
     <header className="Header">
       <h1>
         <Link title='Present Connection showcase' to='/'>
-          <img  src={Logo} alt="Present Connection logo"/>
+          <img className="Header__logo" src={Logo} alt="Present Connection logo"/>
         </Link>
       </h1>
       <nav className="Navigation">
