@@ -1,10 +1,14 @@
+/* Project variables */
+@import './variables.css';
+
 /* Component styles */
 @import '../Components/Loader/style.css';
 @import '../Components/Box/style.css';
 @import '../Components/Header/style.css';
 
-/* View styles */
+/* Views styles */
 @import '../App/style.css';
-@import '../Views/ListPage/style.css';
-@import '../Views/DetailsPage/style.css';
-@import '../Views/NewRecordPage/style.css';
+@import '../Views/ListView/style.css';
+@import '../Views/DetailsView/style.css';
+@import '../Views/NewRecordView/style.css';
+@import '../Views/NotFoundView/style.css';

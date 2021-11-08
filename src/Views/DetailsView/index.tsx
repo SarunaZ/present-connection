@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { getData } from '../../App/utils';
 import Box from "../../Components/Box";
-import { RestData } from "../ListPage/types";
+import { RestData } from "../ListView/types";
 
 interface RouteParams {
   id: string;

@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { getData } from '../../App/utils';
 import Box from '../../Components/Box';
 import Loader from '../../Components/Loader';
-import { RestData } from '../ListPage/types';
+import { RestData } from '../ListView/types';
+import { MAX_BODY_CHAR_NUMBER, MAX_INPUT_CHAR_NUMBER } from './constants';
 
 const NewRecordPage = () => {
   const [boxData, setBoxData] = useState<RestData | undefined>(undefined);
@@ -60,7 +61,8 @@ const NewRecordPage = () => {
               >
                 Record title
               </label>
-              <input 
+              <input
+                maxLength={MAX_INPUT_CHAR_NUMBER}
                 className="NewRecordForm__input"
                 ref={inputTitleRef}
                 type="text"
@@ -74,7 +76,8 @@ const NewRecordPage = () => {
               >
                 Record title
               </label>
-              <textarea 
+              <textarea
+                maxLength={MAX_BODY_CHAR_NUMBER}
                 name="recordText"
                 ref={textRef}
                 className="NewRecordForm__text" 

@@ -17,8 +17,8 @@
 
 .Navigation {
   &__item {
-    color: #FFFFFF;
-    font-size: 1.6rem;
+    color: var(--white);
+    font-size: var(--fs-medium);
     text-decoration: none;
     
     @media (min-width: 600px) {

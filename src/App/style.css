@@ -12,8 +12,8 @@ body {
 }
 
 h2 {
-  font-size: 3.2rem;
-  padding: 0 15px;
+  font-size: var(--fs-x-large);
+  padding: 0 var(--regular);
   
   @media (min-width: 600px) {
     padding: 0;
@@ -21,19 +21,19 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: var(--fs-medium-rare);
   margin-top: 0
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: var(--fs-regular);
   line-height: 24px;
 }
 
 a {
-  font-size: 1.4rem
+  font-size: var(--fs-regular)
 }
 
 .LoaderWrapper {
-  margin: 20px;
+  margin: var(--semiRegular);
 }

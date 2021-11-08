@@ -1,4 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+/* Project variables */
+/* Project variables */
+:root {
+  /* Colors */
+  --white: #FFFFFF;
+  --orange: #F05A22;
+  --orangeHover: #FF6F1B;
+
+  /* Margins/Paddings */
+  --regular: 15px;
+  --semiRegular: 20px;
+
+  /* Font */
+  --fs-regular: 1.4rem;
+  --fs-medium: 1.6rem;
+  --fs-medium-rare: 2rem;
+  --fs-large: 2.4rem;
+  --fs-x-large: 3.2rem;
+  --fw-bold: 600;
+}
 /* Component styles */
 /* Asset from https://codepen.io/mandelid/pen/vwKoe */
 .LoadingSpinner {
@@ -6,11 +26,11 @@
      -moz-animation: spin 1s ease-in-out infinite;
        -o-animation: spin 1s ease-in-out infinite;
           animation: spin 1s ease-in-out infinite;
-  border: 3px solid #FFFFFF;
+  border: 3px solid var(--white);
   -webkit-border-radius: 50%;
      -moz-border-radius: 50%;
           border-radius: 50%;
-  border-top-color: #F05A22;
+  border-top-color: var(--orange);
   display: inline-block;
   height: 20px;
   width: 20px;
@@ -42,24 +62,25 @@
   }
 }
 .Box {
-  background: #F05A22;
+  background: var(--orange);
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: var(--regular);
+  padding: var(--regular);
   width: auto;
 }
 .Box__title,
   .Box__body {
-    color: #FFFFFF;
-    text-transform: capitalize
+    color: var(--white);
+    text-transform: capitalize;
+    word-break: break-all;
   }
 .Box__read-more,
   .Box__back {
-    color: #FFFFFF;
+    color: var(--white);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: var(--fw-bold);
   }
 .Box__read-more:hover, .Box__back:hover {
       text-decoration: underline;
@@ -97,8 +118,8 @@
   }
     }
 .Navigation__item {
-    color: #FFFFFF;
-    font-size: 1.6rem;
+    color: var(--white);
+    font-size: var(--fs-medium);
     text-decoration: none;
   }
 @media (min-width: 600px) {
@@ -106,7 +127,7 @@
       font-size: 2.4rem
   }
     }
-/* View styles */
+/* Views styles */
 html {
   font-size: 10px;
 }
@@ -120,8 +141,8 @@ body {
   margin: 0;
 }
 h2 {
-  font-size: 3.2rem;
-  padding: 0 15px;
+  font-size: var(--fs-x-large);
+  padding: 0 var(--regular);
 }
 @media (min-width: 600px) {
 h2 {
@@ -129,18 +150,18 @@ h2 {
 }
   }
 h3 {
-  font-size: 2rem;
+  font-size: var(--fs-medium-rare);
   margin-top: 0
 }
 p {
-  font-size: 1.4rem;
+  font-size: var(--fs-regular);
   line-height: 24px;
 }
 a {
-  font-size: 1.4rem
+  font-size: var(--fs-regular)
 }
 .LoaderWrapper {
-  margin: 20px;
+  margin: var(--semiRegular);
 }
 .ListPageMain {
   margin: 0 auto;
@@ -184,14 +205,14 @@ a {
     margin-bottom: 15px;
   }
 .NewRecordForm__label {
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
   }
 .NewRecordForm__input {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     height: 40px;
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
     padding: 20px;
     margin-top: 10px;
     width: 100%;
@@ -201,7 +222,7 @@ a {
        -moz-box-sizing: border-box;
             box-sizing: border-box;
     height: 400px;
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
     line-height: 28px;
     margin-top: 10px;
     padding: 20px;
@@ -213,10 +234,10 @@ a {
        -moz-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: #F05A22;
+    background: var(--orange);
     border: none;
     cursor: pointer;
-    color: #FFFFFF;
+    color: var(--white);
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -224,8 +245,8 @@ a {
     display: flex;
     height: 50px;
     gap: 15px;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-bold);
     -webkit-box-pack: center;
     -webkit-justify-content: center;
        -moz-box-pack: center;
@@ -237,10 +258,13 @@ a {
     transition: background 0.2s ease-in-out;
   }
 .NewRecordForm__button:hover {
-      background: #FF6F1B;
+      background: var(--orangeHover);
     }
 @media (min-width: 600px) {
 .NewRecordForm {
     padding: 0
 }
   }
+.NotFound {
+  text-align: center;
+}

@@ -23,13 +23,13 @@
   }
   
   &__label {
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
   }
 
   &__input {
     box-sizing: border-box;
     height: 40px;
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
     padding: 20px;
     margin-top: 10px;
     width: 100%;
@@ -38,7 +38,7 @@
   &__text {
     box-sizing: border-box;
     height: 400px;
-    font-size: 1.6rem;
+    font-size: var(--fs-medium);
     line-height: 28px;
     margin-top: 10px;
     padding: 20px;
@@ -47,20 +47,20 @@
 
   &__button {
     align-items: center;
-    background: #F05A22;
+    background: var(--orange);
     border: none;
     cursor: pointer;
-    color: #FFFFFF;
+    color: var(--white);
     display: flex;
     height: 50px;
     gap: 15px;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: var(--fs-medium);
+    font-weight: var(--fw-bold);
     justify-content: center;
     transition: background 0.2s ease-in-out;
 
     &:hover {
-      background: #FF6F1B;
+      background: var(--orangeHover);
     }
   }
   

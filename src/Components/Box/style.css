@@ -1,21 +1,22 @@
 .Box {
-  background: #F05A22;
+  background: var(--orange);
   box-sizing: border-box;
-  margin-bottom: 15px;
-  padding: 15px;
+  margin-bottom: var(--regular);
+  padding: var(--regular);
   width: auto;
   
   &__title,
   &__body {
-    color: #FFFFFF;
-    text-transform: capitalize
+    color: var(--white);
+    text-transform: capitalize;
+    word-break: break-all;
   }
   
   &__read-more,
   &__back {
-    color: #FFFFFF;
+    color: var(--white);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: var(--fw-bold);
     
     &:hover {
       text-decoration: underline;

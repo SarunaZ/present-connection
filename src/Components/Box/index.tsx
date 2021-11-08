@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTE_ROOT } from '../../App/constants';
-import { RestData } from "../../Views/ListPage/types";
+import { RestData } from "../../Views/ListView/types";
 import Loader from '../Loader';
 
 interface Props {

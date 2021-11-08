@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { RouteProps } from "react-router";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { HelmetProvider } from "react-helmet-async";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Header from "../Components/Header";
 import Loader from '../Components/Loader';
 import { ROUTE_DETAILS_PAGE, ROUTE_NEW_RECORDS, ROUTE_ROOT } from './constants';
@@ -15,24 +15,29 @@ const routeMap: RouteParams[] = [
     id: 'List page',
     exact: true,
     path: ROUTE_ROOT,
-    component: lazy(() => import('../Views/ListPage'))
+    component: lazy(() => import('../Views/ListView'))
   },
   {
     id: 'Details page',
     exact: true,
     path: ROUTE_DETAILS_PAGE,
-    component: lazy(() => import('../Views/DetailsPage'))
+    component: lazy(() => import('../Views/DetailsView'))
   },
   {
     id: 'New records page',
     exact: true,
     path: ROUTE_NEW_RECORDS,
-    component: lazy(() => import('../Views/NewRecordPage'))
+    component: lazy(() => import('../Views/NewRecordView'))
+  },
+  {
+    id: '404 page',
+    component: lazy(() => import('../Views/NotFoundView'))
   },
 ];
 
 const App = () => (
   <HelmetProvider>
+    <Helmet title="Present Connection showcase"/>
     <Router>
       <Suspense
         fallback={
