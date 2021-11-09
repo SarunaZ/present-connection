@@ -7,8 +7,9 @@ import { RestData } from '../ListView/types';
 import { MAX_BODY_CHAR_NUMBER, MAX_INPUT_CHAR_NUMBER } from './constants';
 
 const NewRecordPage = () => {
-  const [boxData, setBoxData] = useState<RestData | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [boxData, setBoxData] = useState<RestData | undefined>(undefined);
+  const [formError, setFormError] = useState<string | undefined>(undefined);
 
   const inputTitleRef = useRef<HTMLInputElement>(null);
   const textRef = useRef<HTMLTextAreaElement>(null);
@@ -31,9 +32,10 @@ const NewRecordPage = () => {
       })
     })
     .then(res =>{
-      setIsLoading(false);
       setBoxData(res);
-    });
+    })
+    .catch(() => setFormError('Something went wrong, please try again later'))
+    .finally(() => setIsLoading(false));
   }
 
   return (
@@ -85,11 +87,15 @@ const NewRecordPage = () => {
             </div>
             <button 
               type="submit"
+              disabled={isLoading}
               className="NewRecordForm__button"
             >
               Submit
               {isLoading && <Loader />}
             </button>
+            {formError && (
+              <div className="NewRecordForm__error">{formError}</div>
+            )}
           </form>
         )}
       </section>

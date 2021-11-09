@@ -2,3 +2,11 @@
   margin: 0 auto;
   max-width: 600px;
 }
+
+.ListPageData {
+  &__error {
+    color: var(--red);
+    font-size: var(--fs-regular);
+    margin-top: var(--regular)
+  }
+}

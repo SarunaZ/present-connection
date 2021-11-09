@@ -7,12 +7,14 @@ import { RestData } from "./types";
 
 const ListPage = () => {
   const [ listData, setListData ] = useState<RestData[] | undefined>(undefined);
+  const [listError, setListError] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     getData('https://jsonplaceholder.typicode.com/posts')
     .then((listDataRes: RestData[]) => {
       setListData([ ...listDataRes])
-    });
+    })
+    .catch(() => setListError('Something went wrong, please try again later'))
   }, []);
 
   return (
@@ -22,7 +24,10 @@ const ListPage = () => {
         <h2 className="ListPageTitle">List</h2>
         <section className="ListPageDataWrapper">
           <div className="ListPageData">
-            {!listData && <Loader />}
+            {!listData && !listError && <Loader />}
+            {!listData && listError && (
+              <div className="ListPageData__error">{listError}</div>
+            )}
             {listData?.map(item => <Box key={item?.id} itemData={item} isReadMore />)}
           </div>
         </section>

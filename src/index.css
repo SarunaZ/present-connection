@@ -6,6 +6,7 @@
   --white: #FFFFFF;
   --orange: #F05A22;
   --orangeHover: #FF6F1B;
+  --red: #FF0000;
 
   /* Margins/Paddings */
   --regular: 15px;
@@ -167,6 +168,11 @@ a {
   margin: 0 auto;
   max-width: 600px;
 }
+.ListPageData__error {
+    color: var(--red);
+    font-size: var(--fs-regular);
+    margin-top: var(--regular)
+  }
 .DetailsPageWrapper {
   margin: 0 auto;
   max-width: 600px;
@@ -260,6 +266,11 @@ a {
 .NewRecordForm__button:hover {
       background: var(--orangeHover);
     }
+.NewRecordForm__error {
+    color: var(--red);
+    font-size: var(--fs-regular);
+    margin-top: var(--regular)
+  }
 @media (min-width: 600px) {
 .NewRecordForm {
     padding: 0

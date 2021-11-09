@@ -64,6 +64,12 @@
     }
   }
   
+  &__error {
+    color: var(--red);
+    font-size: var(--fs-regular);
+    margin-top: var(--regular)
+  }
+
   @media (min-width: 600px) {
     padding: 0;
   }
