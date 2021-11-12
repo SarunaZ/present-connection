@@ -1,7 +1,8 @@
 /**
  * Function for calling apis
- * 
- * @param url 
+ *
+ * @param url
+ * @param options
  * @returns Object
  */
 export const getData = async (url: string, options?: RequestInit) => {
