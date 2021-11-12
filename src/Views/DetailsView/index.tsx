@@ -11,10 +11,10 @@ interface RouteParams {
 
 const DetailsPage = () => {
   const [ data, setData ] = useState<RestData | null>(null);
-  const params = useParams<RouteParams>();
+  const { id } = useParams<RouteParams>();
 
   useEffect(() => {
-    getData(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+    getData(`https://jsonplaceholder.typicode.com/posts/${id}`)
     .then((listDataRes: RestData) => {
       setData(listDataRes)
     });
@@ -23,15 +23,15 @@ const DetailsPage = () => {
 
   return (
     <>
-    <Helmet title={`${data?.title} | Present Connection`} />
-    <div className="DetailsPageWrapper">
-      <section>
-        <h2>Details</h2>
-        <Box itemData={data} isBack isLoading={!data}/>
-      </section>
-    </div>
+      <Helmet title={`${data?.title} | Present Connection`} />
+      <div className="DetailsPageWrapper">
+        <section>
+          <h2>Details</h2>
+          <Box itemData={data} isBack isLoading={!data}/>
+        </section>
+      </div>
     </>
-);
+  );
 }
 
 export default DetailsPage;
